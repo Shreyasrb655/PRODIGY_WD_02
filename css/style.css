@@ -1,0 +1,132 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== VIBRANT ANIMATED BACKGROUND ===== */
+body {
+    height: 100vh;
+    margin: 0;
+
+    background: linear-gradient(270deg, #667eea, #764ba2, #ff6ec4);
+    background-size: 600% 600%;
+    animation: gradientMove 10s ease infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== GLASS CONTAINER ===== */
+.container {
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+h1 {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* ===== CIRCLE ===== */
+.circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+/* SVG */
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+/* CIRCLE BASE */
+circle {
+    fill: none;
+    stroke-width: 10;
+}
+
+/* Background ring */
+.bg {
+    stroke: rgba(255,255,255,0.2);
+}
+
+/* Progress ring (🔥 glow added) */
+#progress {
+    stroke: #ffd700;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 6px #ffd700);
+}
+
+/* TIME TEXT */
+.time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ===== BUTTONS ===== */
+.buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    font-weight: bold;
+}
+
+/* Button colors */
+#start { background: #2ecc71; }
+#pause { background: #f39c12; }
+#reset { background: #e74c3c; }
+#lap { background: #3498db; }
+
+/* Hover */
+.buttons button:hover {
+    transform: scale(1.1);
+}
+
+/* Click feedback */
+.buttons button:active {
+    transform: scale(0.95);
+}
+
+/* ===== LAPS ===== */
+#laps {
+    margin-top: 20px;
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#laps li {
+    padding: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
